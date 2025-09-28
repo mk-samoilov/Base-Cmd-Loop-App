@@ -12,12 +12,13 @@ endif()
 
 add_executable(BaseApp
     scr/main.cpp
-    scr/main.hpp
-    scr/console.cpp
-    scr/console.hpp
+    scr/core.cpp
+    scr/core.hpp
+    scr/capi/console_api.cpp
+    scr/capi/console_api.hpp
 )
 
-target_include_directories(BaseApp PRIVATE scr)
+target_include_directories(BaseApp PRIVATE scr scr/capi)
 
 if(WIN32)
     target_link_libraries(BaseApp psapi)
