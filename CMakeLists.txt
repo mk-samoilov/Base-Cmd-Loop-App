@@ -10,26 +10,21 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-include_directories(scr)
-
-file(GLOB_RECURSE SOURCES 
-    "scr/*.cpp"
-    "scr/*.c"
+add_executable(BaseApp
+    scr/main.cpp
+    scr/main.hpp
+    scr/console.cpp
+    scr/console.hpp
 )
 
-add_executable(BaseApp ${SOURCES})
+target_include_directories(BaseApp PRIVATE scr)
 
 if(WIN32)
     target_link_libraries(BaseApp psapi)
 endif()
 
-set_target_properties(BaseApp PROPERTIES
-    CXX_STANDARD 17
-    CXX_STANDARD_REQUIRED ON
-)
-
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_definitions(BaseApp PRIVATE DEBUG=1)
 endif()
 
-install(TARGETS BaseApp DESTINATION bin)
+install(TARGETS BaseApp RUNTIME DESTINATION bin)
