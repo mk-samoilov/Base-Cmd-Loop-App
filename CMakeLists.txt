@@ -14,6 +14,8 @@ add_executable(BaseApp
     scr/main.cpp
     scr/core.cpp
     scr/core.hpp
+    scr/cr/commands_registry.cpp
+    scr/cr/commands_registry.hpp
     scr/capi/console_api.cpp
     scr/capi/console_api.hpp
 )
