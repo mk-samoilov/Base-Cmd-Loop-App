@@ -11,13 +11,13 @@ else()
 endif()
 
 add_executable(BaseApp
-    scr/main.cpp
-    scr/core.cpp
-    scr/core.hpp
-    scr/cr/commands_registry.cpp
-    scr/cr/commands_registry.hpp
-    scr/capi/console_api.cpp
-    scr/capi/console_api.hpp
+    src/main.cpp
+    src/core.cpp
+    src/core.hpp
+    src/cr/commands_registry.cpp
+    src/cr/commands_registry.hpp
+    src/capi/console_api.cpp
+    src/capi/console_api.hpp
 )
 
 target_include_directories(BaseApp PRIVATE scr scr/capi)
